@@ -1,0 +1,93 @@
+.over{
+    position: absolute;
+    width: 100%;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.over .box-loader{
+    background-color: #FFF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgb(76 87 125 / 2%);
+    border: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 16px;
+    width: 400px;
+    transition: 0.3s;
+    position: absolute;
+    top: 15%
+}
+.over .box-loader p{
+    width: 100%;
+}
+.over .box-loader p, .over .box-loader a{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #4A90BA;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 20px;
+}
+.over .box-loader a i{
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.over .box-loader a{
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    transition: .3s;
+}
+.over .box-loader a:hover{
+    opacity: 0.9;
+}
+.box-loader .btn-error{
+    margin-top: 15px
+}
+.box-just-seg-via{
+    display: none;
+    animation-duration: 0.45s;
+}
+.box-just-seg-via ul{
+    display: flex;
+}
+.box-just-seg-via p{
+    margin-bottom: 15px;
+}
+.box-just-seg-via ul button:first-child{
+    margin-right: 15px;
+}
+
+
+.btn-close-box i{
+    position: absolute;
+    right: 17px;
+    top: 19px;
+    font-size: 17px !important;
+    cursor: pointer;
+}
+
+
+#div-botao{
+    padding-right: 0;
+}
+
+.box-edit h1{
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    text-align: left;
+    color: #4a90ba;
+    width: 100%;
+}
+.box-edit form{
+    margin-top: 15px;
+}

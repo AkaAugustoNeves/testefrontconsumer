@@ -1,0 +1,51 @@
+<div>
+  <app-edit-modal [edit]="edit" [exibe]="exibeEditForm" (acaoRealizada)="acaoEditModal($event)" [tltFormEdit]="tltFormEdit"></app-edit-modal>
+</div>
+<div class="container"> 
+    <form [formGroup]="formUsuario">
+        <div class="column form-group row">
+            <div class="col-sm-5">
+                <label for="email">E-mail: </label>
+                <input type="email" *ngIf="formUsuario.value.id == ''" class="form-control" name="email"  formControlName="email">
+                <input type="email" *ngIf="formUsuario.value.id != ''" class="form-control" name="email"  disabled>
+              </div>
+            <div class="col-sm-5">
+              <label for="id">ID: </label>
+              <input type="text" class="form-control" *ngIf="formUsuario.value.email != ''" name="id" disabled>
+              <input type="text" class="form-control" *ngIf="formUsuario.value.email == ''" name="id"  formControlName="id">
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-primary" (click)="buscar()">Buscar</button>
+            </div>
+        </div>
+    </form>
+</div>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Nickname</th>
+        <th scope="col">Data Registro</th>
+        <th scope="col">Ativo</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <th scope="row">{{usuario.idUsuario}}</th>
+        <td>{{usuario.email}}</td>
+        <td>{{usuario.apelido}}</td>
+        <td>{{usuario.dtHrRegistro}}</td>
+        <td *ngIf="usuario.flgAtivo">ativo</td>
+        <td *ngIf="!usuario.flgAtivo">desativado</td>
+        <td colspan="3">
+          <button type="button" (click)="editar(usuario)" class="btn btn-warning">Editar</button>
+          <button type="button" *ngIf="usuario.flgAtivo" (click)="desabilitar(usuario)" class="btn btn-danger">Desabilitar</button>
+          <button type="button" *ngIf="!usuario.flgAtivo" (click)="desabilitar(usuario)" class="btn btn-danger" disabled>Desabilitar</button>
+          <button type="button" (click)="detalhar(usuario)" class="btn btn-info">Detalhar</button>
+        </td>
+      </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,12 @@
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+  
+      <form [formGroup]="formLogin">
+        <input type="text" id="login" class="fadeIn second" placeholder="username" name="username"  formControlName="username">
+        <input type="password" id="password" class="fadeIn third" placeholder="password" name="password"  formControlName="password">
+        <input type="submit" class="fadeIn fourth" (click)="login()" value="Log In">
+      </form>
+  
+    </div>
+  </div>
